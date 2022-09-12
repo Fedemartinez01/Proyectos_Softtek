@@ -1,0 +1,51 @@
+﻿@page
+@model WebPropia31.Pages.Jugadores.nuevoJugadorModel
+@{
+    ViewData["Title"] = "Nuevo jugador";
+}
+<div class="card-body">
+    <!--Formularios de recepcion de datos-->
+    <form method="post">
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="jugadorGuardable.NombreJugador"></label>
+            </div>
+            <div>
+                <input asp-for="jugadorGuardable.NombreJugador" class="form-control" />
+            </div>
+            <span asp-validation-for="jugadorGuardable.NombreJugador" class="text-danger" />
+        </div>
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="jugadorGuardable.ApellidoJugador"></label>
+            </div>
+            <div>
+                <input asp-for="jugadorGuardable.ApellidoJugador" class="form-control" />
+            </div>
+            <span asp-validation-for="jugadorGuardable.ApellidoJugador" class="text-danger" />
+        </div>
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="jugadorGuardable.IdEquipo"></label>
+            </div>
+            <div>
+                <input asp-for="jugadorGuardable.IdEquipo" class="form-control" />
+            </div>
+            <span asp-validation-for="jugadorGuardable.IdEquipo" class="text-danger" />
+        </div>
+
+
+        <!--Botones para enviar los datos y volver al listado-->
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <input type="submit" value="guardar" class="btn btn-success form-control" />
+            </div>
+            <div>
+                <a asp-page="Index" class="btn btn-light"> Volver al listado </a>
+            </div>
+        </div>
+    </form>
+</div>

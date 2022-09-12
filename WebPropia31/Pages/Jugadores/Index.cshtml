@@ -1,0 +1,54 @@
+﻿@page
+@model WebPropia31.Pages.Jugadores.IndexModel
+@{
+    ViewData["Title"] = "Jugadores";
+}
+
+<h1>Jugadores</h1>
+<div>
+    <h4>texto de jugadores</h4>
+</div>
+
+<div class="card-body">
+
+    <form method="post">
+        @if(Model.JugadoresListados.Count() > 0)
+        {
+
+            // Mostramos los nombres de las columnas de la tabla
+            <table>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.JugadoresListados.First().IdJugador)</th>
+                    <th>@Html.DisplayNameFor(m => m.JugadoresListados.First().NombreJugador)</th>
+                    <th>@Html.DisplayNameFor(m => m.JugadoresListados.First().ApellidoJugador)</th>
+                    <th>@Html.DisplayNameFor(m => m.JugadoresListados.First().Equipo)</th>
+
+
+                </tr>
+
+                @*Mostramos los valores de los campos*@
+                @foreach(var item in Model.JugadoresListados)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(m => item.IdJugador)</td>
+                        <td> @Html.DisplayFor(m => item.NombreJugador)</td>
+                        <td> @Html.DisplayFor(m => item.ApellidoJugador)</td>
+                        <td> @Model.BuscarNombreEquipo(item.IdEquipo)</td>
+
+                        <!--Acciones de edicion y eliminado-->
+                        <td>
+                            <a asp-route-id="@item.IdJugador"
+                            asp-page="editarJugador"
+                            class="btn btn-secondary">Editar</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <h1>Lista vacia</h1>
+        }
+
+    </form>
+</div>

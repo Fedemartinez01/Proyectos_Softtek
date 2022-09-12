@@ -1,0 +1,52 @@
+﻿@page
+@model WebPropia31.Pages.Jugadores.editarJugadorModel
+@{
+    ViewData["Title"] = "Editar jugador";
+}
+<div class="card-body">
+    <!--Formularios de recepcion de datos-->
+    <form method="post">
+        <!--Formulario oculto para ID, necesario para reconocer le contexto-->
+        <input type="hidden" asp-for="JugadorEditable.IdJugador" />
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="JugadorEditable.NombreJugador"></label>
+            </div>
+            <div>
+                <input asp-for="JugadorEditable.NombreJugador" class="form-control" />
+            </div>
+            <span asp-validation-for="JugadorEditable.NombreJugador" class="text-danger" />
+        </div>
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="JugadorEditable.ApellidoJugador"></label>
+            </div>
+            <div>
+                <input asp-for="JugadorEditable.ApellidoJugador" class="form-control" />
+            </div>
+            <span asp-validation-for="JugadorEditable.ApellidoJugador" class="text-danger" />
+        </div>
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="JugadorEditable.IdEquipo"></label>
+            </div>
+            <div>
+                <input asp-for="JugadorEditable.IdEquipo" class="form-control" />
+            </div>
+            <span asp-validation-for="JugadorEditable.IdEquipo" class="text-danger" />
+        </div>
+
+
+        <!--Botones para enviar los datos y volver al listado-->
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <input type="submit" value="guardar" class="btn btn-success form-control" />
+            </div>
+            <div>
+                <a asp-page="Index" class="btn btn-light"> Volver al listado </a>
+            </div>
+        </div>
+    </form>
+</div>

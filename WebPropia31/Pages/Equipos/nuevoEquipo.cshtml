@@ -1,0 +1,51 @@
+﻿@page
+@model WebPropia31.Pages.Equipos.nuevoEquipoModel
+@{
+    ViewData["Title"] = "Nuevo equipo";
+}
+<div class="card-body">
+    <!--Formularios de recepcion de datos-->
+    <form method="post">
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="equipoGuardable.Nombre"></label>
+            </div>
+            <div>
+                <input asp-for="equipoGuardable.Nombre" class="form-control" />
+            </div>
+            <span asp-validation-for="equipoGuardable.Nombre" class="text-danger" />
+        </div>
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="equipoGuardable.Color"></label>
+            </div>
+            <div>
+                <input asp-for="equipoGuardable.Color" class="form-control" />
+            </div>
+            <span asp-validation-for="equipoGuardable.Color" class="text-danger" />
+        </div>
+
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <label asp-for="equipoGuardable.Campeonatos"></label>
+            </div>
+            <div>
+                <input asp-for="equipoGuardable.Campeonatos" class="form-control" />
+            </div>
+            <span asp-validation-for="equipoGuardable.Campeonatos" class="text-danger" />
+        </div>
+
+
+        <!--Botones para enviar los datos y volver al listado-->
+        <div class="container" style="padding:30px">
+            <div class="form-group">
+                <input type="submit" value="guardar" class="btn btn-success form-control" />
+            </div>
+            <div>
+                <a asp-page="Index" class="btn btn-light"> Volver al listado </a>
+            </div>
+        </div>
+    </form>
+</div>
